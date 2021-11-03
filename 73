@@ -1,0 +1,17 @@
+from random import randint
+
+t=[0]
+
+for i in range (1000) :
+    t1 = [randint(1,10)]
+    t += t1
+
+s=0
+
+for i in range (1,10) :
+    for y in range (1000) :
+        if i==t[y] :
+            s+=1
+        else :
+            s+=0
+    print (i,"est tiré",s,"fois")
