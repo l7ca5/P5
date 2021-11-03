@@ -1,0 +1,17 @@
+from random import randint
+t = [0]
+
+for i in range (100) :
+    t1 = [randint(1,1000)]
+    t += t1
+
+print(t)
+
+Vmax = 0
+
+for i in range (100) :
+    if t[i]>Vmax :
+        Vmax=t[i]
+    else :
+        Vmax=Vmax
+print ("Valeur maximale :",Vmax)
