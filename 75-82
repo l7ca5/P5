@@ -1,0 +1,95 @@
+def copie(t):
+  F=[à]*len(t)
+  for i in range (len(t)):
+      F[i]=t[i]
+  return F
+
+def ajout(t1,t2):
+  t3=[0]*(len(t1)+len(t2))
+  for i in range (len(t1)):
+    t3[i]=t1[i]
+  for i in range (len(t1),len(t1)+len(t2)):
+    t3[i]=t3[i-len(t)]
+  return t3
+  
+from random import randint
+
+def ta(n,a,b):
+    t=[0]*n
+    for i in range(n):
+        t[i]=randint(a,b)
+    return t
+
+def tc(n):
+    t=[0]*n
+    for i in range(n):
+        t[i]=t[i-1]+randint(1,100)
+    return t
+
+def e(tab,i,j):
+    x=tab[i]
+    tab[i]=tab[j]
+    tab[j]=x
+
+def somme(tab):
+    s=0
+    for i in range (len(tab)):
+        s+=tab[i]
+    return s
+
+def moyenne(tab):
+    m=somme(tab)/len(tab)
+    return m
+
+def produit(tab):
+    p=0
+    for i in range (len(tab)):
+        if tab[i]==0 :
+            return 0
+        else :
+            p*=tab[i]
+        return p
+
+def mirroir(tab):
+    n=len(tab)
+    for i in range (0,n//2):
+        e(tab,i,n-1-i)
+
+def melange(tab):
+    for i in range (len(t)):
+        e(tab,i,randint(0,1))
+
+def prefixe(tab1,tab2) :
+    if len(tab1)>len(tab2):
+        return False
+    else :
+        for i in range (len(tab1)):
+            if tab1[i]!=tab2[i] :
+                return False
+        return True
+
+def suffixe(tab1,tab2):
+    if len(tab1)>len(tab2):
+        return False
+    else :
+        for i in range (len(tab2)-len(tab1),len(tab2)):
+            if tab1[i]!=tab2[i] :
+                return False
+        return True
+def hamming(tab1,tab2):
+    s=0
+    for i in range (len(tab1)):
+        if tab1[i]!=tab2[i]:
+            s+=1
+        else :
+            s+=0
+    return s 
+
+def hamming(tab1,tab2):
+    s=0
+    for i in range (len(tab1)):
+        if tab1[i]!=tab2[i]:
+            s+=1
+        else :
+            s+=0
+    return s 
